@@ -74,7 +74,7 @@ const App = () => {
           </div>
 
           {/* Page Content - Scrollable */}
-          <div className="flex-1 overflow-y-auto px-12 py-8">
+          <div className="flex-1 overflow-y-auto px-12 py-8 scrollbar-hide">
             {pages[currentPage].component}
           </div>
 
@@ -121,12 +121,12 @@ const WorkExperiencePage = () => {
       
       <div className="relative pl-12">
         {/* Timeline line */}
-        <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-amber-300"></div>
+        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-amber-300"></div>
         
         {experiences.map((exp, index) => (
           <div key={index} className="relative mb-12 last:mb-0">
             {/* Timeline dot */}
-            <div className="absolute left-10 w-5 h-5 rounded-full bg-amber-600 border-4 border-white shadow-md"></div>
+            <div className="absolute -left-8 w-5 h-5 rounded-full bg-amber-600 border-4 border-white shadow-md"></div>
             
             <div className="ml-4">
               <div className="text-sm font-semibold text-amber-700 mb-2">{exp.year}</div>

@@ -56,17 +56,17 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 flex items-center justify-center p-8">
+    <div className="min-h-screen w-full bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 flex items-center justify-center p-8">
       <div className="relative w-full max-w-6xl h-[85vh]">
         {/* Book Container */}
         <div className="relative bg-white rounded-lg shadow-2xl h-full flex flex-col">
           {/* Page Curl Effect - Top Right */}
           <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden pointer-events-none z-10">
-            <div className="absolute top-0 right-0 border-t-[40px] border-r-[40px] border-t-gray-200 border-r-transparent"></div>
+            <div className="absolute top-0 right-0 border-t-40 border-r-40 border-t-gray-200 border-r-transparent"></div>
           </div>
 
           {/* Header with page navigation */}
-          <div className="flex-shrink-0 border-b border-gray-200 bg-white rounded-t-lg">
+          <div className="shrink-0 border-b border-gray-200 bg-white rounded-t-lg">
             <div className="flex items-center justify-between px-6 py-4">
               <div className="flex items-center gap-4">
                 <button
@@ -107,13 +107,13 @@ const App = () => {
           </div>
 
           {/* Page number at bottom */}
-          <div className="flex-shrink-0 pb-6 pr-12 text-right">
+          <div className="shrink-0 pb-6 pr-12 text-right">
             <span className="text-sm text-gray-400 font-serif">{currentPage + 1}</span>
           </div>
         </div>
 
         {/* Book Spine Effect */}
-        <div className="absolute left-0 top-8 bottom-8 w-3 bg-gradient-to-r from-amber-900 via-amber-700 to-amber-600 rounded-l shadow-lg"></div>
+        <div className="absolute left-0 top-8 bottom-8 w-3 bg-linear-to-r from-amber-900 via-amber-700 to-amber-600 rounded-l shadow-lg"></div>
       </div>
     </div>
   );
@@ -122,7 +122,7 @@ const App = () => {
 const HomePage = () => (
   <div className="h-full flex flex-col items-center justify-center text-center space-y-6">
     <h1 className="text-6xl font-serif font-bold text-amber-900 mb-4">
-      Your Name
+      Tamas Balint Farago
     </h1>
     <p className="text-2xl text-gray-600 max-w-2xl">
       Portfolio & Professional Journey

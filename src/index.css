@@ -1,5 +1,67 @@
 @import "tailwindcss";
 
+@theme {
+  /* Aged Paper - warm, yellowed pages */
+  --color-paper-50: #fdfbf7;
+  --color-paper-100: #f9f5eb;
+  --color-paper-200: #f4ebdb;
+  --color-paper-300: #ecdfc8;
+  --color-paper-400: #e3d2b3;
+  --color-paper-500: #d4bc96;
+  --color-paper-600: #c4a672;
+  --color-paper-700: #a68a5c;
+  --color-paper-800: #7a6343;
+  --color-paper-900: #5a4830;
+
+  /* Leather - rich brown leather binding */
+  --color-leather-50: #f7f3f0;
+  --color-leather-100: #e8ddd4;
+  --color-leather-200: #d4c0ad;
+  --color-leather-300: #b89d7f;
+  --color-leather-400: #9d7d57;
+  --color-leather-500: #7d5e3d;
+  --color-leather-600: #654a2e;
+  --color-leather-700: #4d3621;
+  --color-leather-800: #3a2818;
+  --color-leather-900: #2a1d11;
+
+  /* Ink - faded black/sepia ink */
+  --color-ink-50: #f5f3f1;
+  --color-ink-100: #e3ddd7;
+  --color-ink-200: #cec3b8;
+  --color-ink-300: #b0a091;
+  --color-ink-400: #8d7a68;
+  --color-ink-500: #6b584a;
+  --color-ink-600: #544539;
+  --color-ink-700: #3f342b;
+  --color-ink-800: #2d2420;
+  --color-ink-900: #1d1814;
+
+  /* Gold - aged gold leaf accents */
+  --color-gold-50: #fdfaf4;
+  --color-gold-100: #f9f0d9;
+  --color-gold-200: #f3e0ad;
+  --color-gold-300: #e8c870;
+  --color-gold-400: #d9ad42;
+  --color-gold-500: #b88d2a;
+  --color-gold-600: #967020;
+  --color-gold-700: #75541a;
+  --color-gold-800: #563d14;
+  --color-gold-900: #3d2b0f;
+
+  /* Burgundy - classic book cloth/ribbon */
+  --color-burgundy-50: #faf5f5;
+  --color-burgundy-100: #f0e3e3;
+  --color-burgundy-200: #e0c1c1;
+  --color-burgundy-300: #c99494;
+  --color-burgundy-400: #ad6464;
+  --color-burgundy-500: #8b3f3f;
+  --color-burgundy-600: #6e2f2f;
+  --color-burgundy-700: #532323;
+  --color-burgundy-800: #3d1919;
+  --color-burgundy-900: #2b1212;
+}
+
 /* Hide scrollbar but keep functionality */
 .scrollbar-hide {
   scrollbar-width: none; /* Firefox */

@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 7;
+  const totalPages = 8;
 
   const nextPage = () => {
     if (currentPage < totalPages - 1) {
@@ -16,6 +16,12 @@ const App = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
+  const myEducation = [
+    { year: '2024 - (2027)', title: 'Vrije Universiteit Amsterdam', place: 'BSc Mathematics', description: '' },
+    { year: '2023 - 2024', title: 'Vrije Universiteit Amsterdam', place: 'BSc Artificial Intelligence', description: 'discontinued to pursue a more aligned academic focus.' },
+    { year: '2019 - 2023', title: 'Berzsenyi Dániel Gimnázium', place: 'Advanced Physics and Computer Science class', description: '' },
+  ];
 
   const myExperiences = [
     { year: '2023', title: 'Senior Software Engineer', place: 'Tech Corp', description: 'Led development team in creating scalable microservices architecture. Mentored junior developers and established best practices for code quality and testing.' },
@@ -47,6 +53,7 @@ const App = () => {
 
   const pages = [
     { name: 'Home', component: <HomePage /> },
+    { name: 'Education', component: <TimelineTypePage experiences={myEducation} pageName={"Education"}/>},
     { name: 'Work Experience', component: <TimelineTypePage experiences={ myExperiences } pageName={"Work Experience"}/> },
     { name: 'Scientific Accomplishments', component: <TimelineTypePage experiences={myAccomplishments} pageName={"Scientific Accomplishments"}/> },
     { name: 'Projects', component: <CardTypePage cardData={myProjects} pageName={"Projects"}/> },
@@ -56,17 +63,18 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 flex items-center justify-center p-8">
+    <div className="min-h-screen w-full bg-linear-to-br from-leather-400 via-leather-200 to-leather-600 flex items-center justify-center p-8">
       <div className="relative w-full max-w-6xl h-[85vh]">
         {/* Book Container */}
-        <div className="relative bg-white rounded-lg shadow-2xl h-full flex flex-col">
+        <div className="relative bg-linear-to-tr from-paper-50 via-paper-200 to-paper-400 rounded-lg shadow-2xl h-full flex flex-col">
           {/* Page Curl Effect - Top Right */}
-          <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden pointer-events-none z-10">
-            <div className="absolute top-0 right-0 border-t-40 border-r-40 border-t-gray-200 border-r-transparent"></div>
+          <div className="absolute top-0 right-0 w-25 h-25 overflow-hidden pointer-events-none z-10">
+            <div className="absolute top-0 right-0 w-0 h-0 border-l-100 border-t-100 border-l-transparent border-t-burgundy-500"></div>
+            <div className="absolute -top-px -right-px w-0 h-0 border-r-101 border-b-101 border-r-transparent border-b-paper-500 shadow-gold-900"></div>
           </div>
 
           {/* Header with page navigation */}
-          <div className="shrink-0 border-b border-gray-200 bg-white rounded-t-lg">
+          <div className="shrink-0 bg-leather-400 rounded-t-lg">
             <div className="flex items-center justify-between px-6 py-4">
               <div className="flex items-center gap-4">
                 <button
@@ -75,12 +83,12 @@ const App = () => {
                   className={`p-2 rounded-full transition-all ${
                     currentPage === 0
                       ? 'text-gray-300 cursor-not-allowed'
-                      : 'text-amber-700 hover:bg-amber-100'
+                      : 'text-burgundy-500 hover:bg-gold-400'
                   }`}
                 >
                   <ChevronLeft size={24} />
                 </button>
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-ink-700">
                   Page {currentPage + 1} of {totalPages}
                 </span>
                 <button
@@ -89,15 +97,12 @@ const App = () => {
                   className={`p-2 rounded-full transition-all ${
                     currentPage === totalPages - 1
                       ? 'text-gray-300 cursor-not-allowed'
-                      : 'text-amber-700 hover:bg-amber-100'
+                      : 'text-burgundy-500 hover:bg-gold-400'
                   }`}
                 >
                   <ChevronRight size={24} />
                 </button>
               </div>
-              <h2 className="text-lg font-serif font-semibold text-gray-800">
-                {pages[currentPage].name}
-              </h2>
             </div>
           </div>
 
@@ -106,14 +111,14 @@ const App = () => {
             {pages[currentPage].component}
           </div>
 
-          {/* Page number at bottom */}
+          {/* Page number at bottom
           <div className="shrink-0 pb-6 pr-12 text-right">
             <span className="text-sm text-gray-400 font-serif">{currentPage + 1}</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Book Spine Effect */}
-        <div className="absolute left-0 top-8 bottom-8 w-3 bg-linear-to-r from-amber-900 via-amber-700 to-amber-600 rounded-l shadow-lg"></div>
+        <div className="absolute left-0 top-8 bottom-8 w-3 bg-linear-to-r from-burgundy-900 via-burgundy-500 to-burgundy-400 rounded-l shadow-lg"></div>
       </div>
     </div>
   );
@@ -121,15 +126,12 @@ const App = () => {
 
 const HomePage = () => (
   <div className="h-full flex flex-col items-center justify-center text-center space-y-6">
-    <h1 className="text-6xl font-serif font-bold text-amber-900 mb-4">
+    <h1 className="text-6xl font-serif font-bold text-burgundy-600 mb-4">
       Tamas Balint Farago
     </h1>
-    <p className="text-2xl text-gray-600 max-w-2xl">
+    <p className="text-2xl text-burgundy-900 max-w-2xl">
       Portfolio & Professional Journey
     </p>
-    <div className="mt-8 text-gray-500">
-      <p>Use the arrows to navigate through the pages</p>
-    </div>
   </div>
 );
 // Define the type for a single experience
@@ -147,24 +149,24 @@ type TimelinePageProps = {
 const TimelineTypePage = ({ experiences = [], pageName } : TimelinePageProps) => {
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-serif font-bold text-center mb-12 text-amber-900">
+      <h2 className="text-3xl font-serif font-bold text-center mb-12 text-burgundy-600">
         {pageName}
       </h2>
       
       <div className="relative pl-12">
         {/* Timeline line */}
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-amber-300"></div>
+        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gold-300"></div>
         
         {experiences.map((exp, index) => (
           <div key={index} className="relative mb-12 last:mb-0">
             {/* Timeline dot */}
-            <div className="absolute -left-8 w-5 h-5 rounded-full bg-amber-600 border-4 border-white shadow-md"></div>
+            <div className="absolute -left-8 w-5 h-5 rounded-full bg-burgundy-500 border-4 border-white shadow-md"></div>
             
             <div className="ml-4">
-              <div className="text-sm font-semibold text-amber-700 mb-2">{exp.year}</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-1">{exp.title}</h3>
-              <p className="text-gray-600 font-medium mb-3">{exp.place}</p>
-              <p className="text-gray-700 text-sm leading-relaxed">{exp.description}</p>
+              <div className="text-sm font-semibold text-burgundy-400 mb-2">{exp.year}</div>
+              <h3 className="text-xl font-bold text-ink-800 mb-1">{exp.title}</h3>
+              <p className="text-ink-600 font-medium mb-3">{exp.place}</p>
+              <p className="text-ink-700 text-sm leading-relaxed">{exp.description}</p>
             </div>
           </div>
         ))}
@@ -189,20 +191,20 @@ type CardPageProps = {
 const CardTypePage = ({ cardData = [], pageName} : CardPageProps) => {
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="text-3xl font-serif font-bold text-center mb-12 text-amber-900">
+      <h2 className="text-3xl font-serif font-bold text-center mb-12 text-burgundy-600">
         {pageName}
       </h2>
       
       <div className="grid grid-cols-2 gap-8">
         {cardData.map((card, index) => (
-          <div key={index} className="border-2 border-gray-200 rounded-lg p-6 hover:border-amber-400 hover:shadow-lg transition-all bg-white">
+          <div key={index} className="border-2 border-paper-400 rounded-lg p-6 hover:border-burgundy-500 hover:shadow-lg transition-all bg-paper-50">
             <div className="text-5xl mb-4 text-center">{card.image}</div>
-            <h3 className="font-bold text-xl mb-3 text-gray-800">{card.title}</h3>
-            <p className="text-sm text-amber-700 mb-3 font-semibold">{card?.role}</p>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">{card.description}</p>
+            <h3 className="font-bold text-xl mb-3 text-ink-800">{card.title}</h3>
+            <p className="text-sm text-burgundy-600 mb-3 font-semibold">{card?.role}</p>
+            <p className="text-sm text-ink-600 mb-4 leading-relaxed">{card.description}</p>
             <div className="flex flex-wrap gap-2">
               {card.tech?.map((tech, i) => (
-                <span key={i} className="text-xs px-3 py-1 bg-amber-100 text-amber-800 rounded-full font-medium">
+                <span key={i} className="text-xs px-3 py-1 bg-burgundy-400 text-ink-800 rounded-full font-medium">
                   {tech}
                 </span>
               ))}
